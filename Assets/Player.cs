@@ -8,10 +8,9 @@ public class Player: MonoBehaviour {
 	public float jumpAngle = 45f;
 
     private CardboardHead head;
-    private Text gazeText;
 	private Rigidbody rb;
 
-	private bool onFloor;
+	private float lastJumpRequestTime;
 
 	void Start() {
 		Cardboard.SDK.OnTrigger += PullTrigger;
@@ -19,17 +18,27 @@ public class Player: MonoBehaviour {
 		rb = GetComponent<Rigidbody>();
 	}
 
-	void OnCollisionEnter() {
-		onFloor = true;
+    private void PullTrigger() {
+		JumpRequested();
+    }
+
+	private void JumpRequested() {
+		lastJumpRequestTime = Time.time;
+		rb.WakeUp();
 	}
 
-    private void PullTrigger() {
-		if (onFloor) {
-			onFloor = false;
-			Vector3 projectedVector = Vector3.ProjectOnPlane(head.Gaze.direction, Vector3.up);
-			Vector3 jumpVector = Vector3.RotateTowards(projectedVector, Vector3.up, jumpAngle * Mathf.Deg2Rad, 0);
-			rb.velocity = jumpVector * jumpVelocity;
+	private void Jump() {
+		Vector3 projectedVector = Vector3.ProjectOnPlane(head.Gaze.direction, Vector3.up);
+		Vector3 jumpVector = Vector3.RotateTowards(projectedVector, Vector3.up, jumpAngle * Mathf.Deg2Rad, 0);
+		rb.velocity = jumpVector * jumpVelocity;
+	}
+
+	void OnCollisionStay(Collision collision) {
+		float delta = Time.time - lastJumpRequestTime;
+		if (delta < 0.1) {
+			Jump();
+			lastJumpRequestTime = 0f;
 		}
-    }
-	
+	}
+
 }
