@@ -6,14 +6,17 @@ public class Fire : MonoBehaviour {
 	public float fireSpeed;
 
 	private Player player;
+	private GameState gameState;
 
 	void Start() {
 		player = FindObjectOfType<Player>();
+		gameState = FindObjectOfType<GameState>();
 	}
 	
 	void Update() {
 		AlignWithPlayer();
 		MoveForward();
+		CheckIfPlayerBurnt();
 	}
 
 	void AlignWithPlayer() {
@@ -24,5 +27,11 @@ public class Fire : MonoBehaviour {
 
 	void MoveForward() {
 		transform.Translate(Vector3.forward * fireSpeed * Time.deltaTime);
+	}
+
+	void CheckIfPlayerBurnt() {
+		if (player.transform.position.z < transform.position.z ) {
+			gameState.IsGameOver = true;
+		}
 	}
 }
