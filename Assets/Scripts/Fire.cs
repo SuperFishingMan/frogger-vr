@@ -14,9 +14,11 @@ public class Fire : MonoBehaviour {
 	}
 	
 	void Update() {
-		AlignWithPlayer();
-		MoveForward();
-		CheckIfPlayerBurnt();
+		if (!gameState.IsGameOver) {
+			AlignWithPlayer();
+			MoveForward();
+			CheckIfPlayerBurnt();
+		}
 	}
 
 	void AlignWithPlayer() {
