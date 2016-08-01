@@ -103,6 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vehiclePrefabs:
-  - {fileID: 1000012320881290, guid: 6e23a55bcb82f3a46bbce819477c7f4b, type: 2}
-  - {fileID: 1000013760333018, guid: 62172809654424c47ba0729ab419e361, type: 2}
-  startPosition: 0
+  - {fileID: 114000012548968332, guid: 6e23a55bcb82f3a46bbce819477c7f4b, type: 2}
+  - {fileID: 114000012133274872, guid: 62172809654424c47ba0729ab419e361, type: 2}
+  startPosition: -10
+  laneSpeed: 5
+  laneLength: 50
