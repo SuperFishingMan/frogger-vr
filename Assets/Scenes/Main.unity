@@ -182,7 +182,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2c32987c2bc01844a94adfb917dd677d, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c32987c2bc01844a94adfb917dd677d, type: 2}
@@ -280,7 +280,7 @@ MonoBehaviour:
   lanePrefabs:
   - {fileID: 1000010980877970, guid: 4484d1f15605e214ba34c29e2c04a448, type: 2}
   - {fileID: 1000013975670028, guid: 541fcc20af7060e48ba4202fbd52c5fe, type: 2}
-  spawnHorizon: 500
+  spawnHorizon: 10
   laneWidth: 2
 --- !u!4 &589185722
 Transform:
@@ -628,6 +628,10 @@ Prefab:
       propertyPath: ShapeModule.boxZ
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 2c32987c2bc01844a94adfb917dd677d, type: 2}
+      propertyPath: InitialModule.maxNumParticles
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c32987c2bc01844a94adfb917dd677d, type: 2}
   m_IsPrefabParent: 0
@@ -783,6 +787,10 @@ Prefab:
     - target: {fileID: 19800000, guid: 2c32987c2bc01844a94adfb917dd677d, type: 2}
       propertyPath: ShapeModule.boxZ
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 2c32987c2bc01844a94adfb917dd677d, type: 2}
+      propertyPath: InitialModule.maxNumParticles
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c32987c2bc01844a94adfb917dd677d, type: 2}
