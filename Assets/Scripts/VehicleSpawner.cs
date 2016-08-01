@@ -6,6 +6,7 @@ public class VehicleSpawner : MonoBehaviour {
 	public Vehicle[] vehiclePrefabs;
 	public float startPosition = -10f;
 	public float laneSpeed = 5f;
+	public float laneLength = 50f;
 	
 	void Start() {
 		SpawnVehicle();
@@ -15,7 +16,7 @@ public class VehicleSpawner : MonoBehaviour {
 		Vehicle newVehicle = Instantiate(vehiclePrefabs[0]);
 		newVehicle.transform.position = GetPositionOffest();
 		newVehicle.transform.parent = transform;
-		newVehicle.SetSpeed(laneSpeed);
+		newVehicle.SetPath(laneSpeed, laneLength);
 	}
 
 	Vector3 GetPositionOffest() {
