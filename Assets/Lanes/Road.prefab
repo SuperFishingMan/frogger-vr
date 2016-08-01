@@ -105,6 +105,7 @@ MonoBehaviour:
   vehiclePrefabs:
   - {fileID: 114000012548968332, guid: 6e23a55bcb82f3a46bbce819477c7f4b, type: 2}
   - {fileID: 114000012133274872, guid: 62172809654424c47ba0729ab419e361, type: 2}
-  startPosition: -10
+  startPosition: -50
   laneSpeed: 5
-  laneLength: 50
+  laneLength: 100
+  maxSpawnTime: 10

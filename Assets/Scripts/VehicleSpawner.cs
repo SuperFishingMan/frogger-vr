@@ -7,13 +7,22 @@ public class VehicleSpawner : MonoBehaviour {
 	public float startPosition = -10f;
 	public float laneSpeed = 5f;
 	public float laneLength = 50f;
+	public float maxSpawnTime = 10f;
 	
 	void Start() {
-		SpawnVehicle();
+		StartCoroutine("Spawn");
 	}
 
-	void SpawnVehicle() {
-		Vehicle newVehicle = Instantiate(vehiclePrefabs[0]);
+	IEnumerator Spawn() {
+		while (true) {
+			yield return new WaitForSeconds(Random.Range(0.5f, maxSpawnTime));
+			int vehicleIndex = Random.Range(0, vehiclePrefabs.Length);
+			SpawnVehicle(vehicleIndex);
+		}
+	}
+
+	void SpawnVehicle(int vehicleIndex) {
+		Vehicle newVehicle = Instantiate(vehiclePrefabs[vehicleIndex]);
 		newVehicle.transform.position = GetPositionOffest();
 		newVehicle.transform.parent = transform;
 		newVehicle.SetPath(laneSpeed, laneLength);
