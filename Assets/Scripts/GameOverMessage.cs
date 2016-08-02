@@ -9,12 +9,12 @@ public class GameOverMessage : MonoBehaviour {
 
 	private Canvas canvas;
 	private Player player;
-	private LevelState gameState;
+	private LevelState levelState;
 
 	private CanvasScaler canvasScaler;
 	
 	void Start() {
-		gameState = FindObjectOfType<LevelState>();
+		levelState = FindObjectOfType<LevelState>();
 		player = FindObjectOfType<Player>();
 		canvas = GetComponent<Canvas>();
 		canvasScaler = GetComponent<CanvasScaler>();
@@ -23,7 +23,7 @@ public class GameOverMessage : MonoBehaviour {
 	}
 
 	void Update() {
-		if (gameState.IsGameOver == true) {
+		if (levelState.IsGameOver == true) {
 			canvas.enabled = true;
 			canvasScaler.enabled = true;
 		}
@@ -34,4 +34,5 @@ public class GameOverMessage : MonoBehaviour {
 		Vector3 messageOffset = player.LookDirection() * messageDistance;
 		transform.position = player.transform.position + messageOffset + Vector3.up * messageYPosition;
 	}
+	
 }

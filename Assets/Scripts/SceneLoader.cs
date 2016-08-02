@@ -8,7 +8,7 @@ public class SceneLoader : MonoBehaviour {
 
 	void Start () {
 		if (autoLoadTimer > 0) {
-			Invoke("LoadGame", autoLoadTimer);
+			Invoke("LoadNextLevel", autoLoadTimer);
 		}
 	}
 	

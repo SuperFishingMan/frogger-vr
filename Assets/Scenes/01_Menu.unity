@@ -561,6 +561,7 @@ GameObject:
   - 224: {fileID: 1897416960}
   - 222: {fileID: 1897416962}
   - 114: {fileID: 1897416961}
+  - 114: {fileID: 1897416963}
   m_Layer: 0
   m_Name: High Score
   m_TagString: Untagged
@@ -625,6 +626,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1897416959}
+--- !u!114 &1897416963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1897416959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7915cb7f82414ed40b33dcc8efc0b422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1985644397 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224000011642719840, guid: bc3622385433e304fa7fa5ad0dbbfcdd,
