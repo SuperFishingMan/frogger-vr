@@ -29,7 +29,6 @@ public class VehicleSpawner : MonoBehaviour {
 	}
 
 	Vector3 GetPositionOffest() {
-		float spawnHeight = (transform.localScale.y / 2) + (vehiclePrefabs[0].transform.localScale.y / 2);
-		return new Vector3(startPosition, spawnHeight, transform.position.z);
+		return new Vector3(startPosition, transform.position.y, transform.position.z);
 	}
 }
