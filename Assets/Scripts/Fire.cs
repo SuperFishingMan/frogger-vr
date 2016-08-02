@@ -6,11 +6,11 @@ public class Fire : MonoBehaviour {
 	public float fireSpeed;
 
 	private Player player;
-	private GameState gameState;
+	private LevelState gameState;
 
 	void Start() {
 		player = FindObjectOfType<Player>();
-		gameState = FindObjectOfType<GameState>();
+		gameState = FindObjectOfType<LevelState>();
 	}
 	
 	void Update() {

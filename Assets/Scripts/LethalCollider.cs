@@ -5,7 +5,7 @@ public class LethalCollider : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision) {
 		if (collision.gameObject.GetComponent<Player>() != null) {
-			GameState gameState = FindObjectOfType<GameState>();
+			LevelState gameState = FindObjectOfType<LevelState>();
 			gameState.IsGameOver = true;
 		}
 	}

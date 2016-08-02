@@ -9,7 +9,7 @@ public class Player: MonoBehaviour {
 
     private CardboardHead head;
 	private Rigidbody rb;
-	private GameState gameState;
+	private LevelState gameState;
 
 	private float lastJumpRequestTime;
 
@@ -17,7 +17,7 @@ public class Player: MonoBehaviour {
 		Cardboard.SDK.OnTrigger += PullTrigger;
         head = GetComponentInChildren<CardboardHead>();
 		rb = GetComponent<Rigidbody>();
-		gameState = FindObjectOfType<GameState>();
+		gameState = FindObjectOfType<LevelState>();
 	}
 
     private void PullTrigger() {

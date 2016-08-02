@@ -9,12 +9,12 @@ public class GameOverMessage : MonoBehaviour {
 
 	private Canvas canvas;
 	private Player player;
-	private GameState gameState;
+	private LevelState gameState;
 
 	private CanvasScaler canvasScaler;
 	
 	void Start() {
-		gameState = FindObjectOfType<GameState>();
+		gameState = FindObjectOfType<LevelState>();
 		player = FindObjectOfType<Player>();
 		canvas = GetComponent<Canvas>();
 		canvasScaler = GetComponent<CanvasScaler>();
